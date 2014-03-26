@@ -27,7 +27,7 @@ window.onload = function () {
     speaker.transform("s0");
 
     //now append the svg
-    share.append(s.innerSVG());
+    share.append(s.selectAll("g"));
 
     // animate the speech bubble pointer
     var pointer = speech.select('#pointer');
