@@ -12,7 +12,14 @@ window.onload = function () {
         submit = s.select('#submit'),
         text = s.select('#text');
 
-    // add speech bubble to share svg
+    // add speech bubble and text to share svg
     share.append(speech);
+    share.append(text);
+
+    //animate the speech bubble pointer
+    var pointer = speech.select('#pointer');
+    pointer.animate({
+      transform: "t100,0"
+    }, 600, mina.backin);
   });
 }
