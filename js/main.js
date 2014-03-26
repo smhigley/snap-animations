@@ -10,16 +10,25 @@ window.onload = function () {
     var speech = s.select('#speech'),
         phone = s.select('#phone'),
         submit = s.select('#submit'),
-        text = s.select('#text');
+        text = s.select('#text'),
+        button = phone.select('#button'),
+        speaker = phone.select('#speaker');
 
-    // add speech bubble and text to share svg
-    share.append(speech);
-    share.append(text);
+    // hide phone frame and submit button
+    // and set them up to be animated
+    submit.transform("t0,-20");
+    phone.transform("s0.8, 0.6");
+    button.transform("s0");
+    speaker.transform("s0");
 
-    //animate the speech bubble pointer
+    //now append the svg
+    share.append(s);
+
+    // animate the speech bubble pointer
     var pointer = speech.select('#pointer');
     pointer.animate({
       transform: "t50,0"
     }, 500, mina.backin);
+
   });
 }
