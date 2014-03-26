@@ -19,7 +19,7 @@ window.onload = function () {
     //animate the speech bubble pointer
     var pointer = speech.select('#pointer');
     pointer.animate({
-      transform: "t100,0"
-    }, 600, mina.backin);
+      transform: "t50,0"
+    }, 500, mina.backin);
   });
 }
