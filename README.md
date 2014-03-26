@@ -1,4 +1,4 @@
-snap-animations
+Animations with Snap.svg
 ===============
 
-SVG animations with Snap
+SVG's and animation comps provided courtesy of Autumn Hutchins.
