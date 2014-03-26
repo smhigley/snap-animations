@@ -5,7 +5,7 @@ window.onload = function () {
   var share = Snap('#share');
 
   // load svg file
-  Snap.load("../img/animated-share.svg", function (s) {
+  Snap.load("img/animated-share.svg", function (s) {
     // now save some vector groups into variables
     var speech = s.select('#speech'),
         phone = s.select('#phone'),
