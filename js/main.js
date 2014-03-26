@@ -16,13 +16,18 @@ window.onload = function () {
 
     // hide phone frame and submit button
     // and set them up to be animated
-    submit.transform("t0,-20");
-    phone.transform("s0.8, 0.6");
+    // but first we need the phone's bounding box
+    var bbox = phone.getBBox();
+
+    //now the transforms
+    submit.transform("t0,-25");
+    phone.select('#frame').transform("s0.85, 0.5, " + bbox.cx + "," + bbox.cy);
+    phone.select('#background').transform("s0, 0.75, " + bbox.cx + ", " + "0" );
     button.transform("s0");
     speaker.transform("s0");
 
     //now append the svg
-    share.append(s);
+    share.append(s.innerSVG());
 
     // animate the speech bubble pointer
     var pointer = speech.select('#pointer');
