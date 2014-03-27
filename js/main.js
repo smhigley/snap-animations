@@ -15,7 +15,8 @@ window.onload = function () {
         button = phone.select('#button'),
         speaker = phone.select('#speaker'),
         frame = phone.select("#frame"),
-        screenbg = phone.select("#background");
+        screenbg = phone.select("#background"),
+        animating = false;
 
     // we also need the phone's bounding box for some calculations
     var phonebox = screenbg.getBBox();
@@ -33,6 +34,7 @@ window.onload = function () {
     // let's break down the animations into steps that accept delay and animation length as args
     // 1. animate the speech bubble pointer
     function step1(delay, length) {
+      animating = true;
       pointer.animate({
         transform: "t50,0"
       }, length, mina.backin);
@@ -95,7 +97,7 @@ window.onload = function () {
           //button up
           button_top.animate({
             transform: "t0,0"
-          }, length/2, mina.easeout);
+          }, length/2, mina.easeout, function(){ animating = false; });
         });
       }, delay);
     }
@@ -119,10 +121,10 @@ window.onload = function () {
 
     // then animate when hovered
     phone.mouseover(function() {
-      animating = frame.inAnim();
-      if(animating) { console.log(s); }
-      reset();
-      animate_share();
+      if(!animating) {
+        reset();
+        animate_share();
+      }
     });
 
   });
