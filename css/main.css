@@ -103,3 +103,8 @@ textarea {
   margin: 0 auto;
   padding: 0 10px;
 }
+
+.animation {
+  display: inline-block;
+  padding: 0 20px;
+}

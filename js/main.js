@@ -1,7 +1,8 @@
 // Snap SVG code
 
 window.onload = function () {
-  // wrap svg on page with Snap
+  // share phone code
+  // wrap share svg on page with Snap
   var share = Snap('#share-container');
 
   // load svg file
@@ -128,4 +129,5 @@ window.onload = function () {
     });
 
   });
+
 }
